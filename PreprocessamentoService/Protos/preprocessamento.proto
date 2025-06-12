@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "PreprocessamentoService";
+
+service PreProcessamento {
+  rpc Processar (DadoOriginal) returns (DadoCSV);
+}
+
+message DadoOriginal {
+  string tipo = 1;
+  string formato = 2;
+  string conteudo = 3;
+}
+
+message DadoCSV {
+  string conteudo = 1;
+}
