@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SD_Server_Web.Models.DadosRecebidosServidor>
+
+<h2 class="mt-4 mb-4 text-center">Dados Recebidos do Servidor</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>WavyId</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>DataMedicao</th>
+                <th>AggregatorId</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.WavyId</td>
+                    <td>@item.Tipo</td>
+                    <td>@item.Valor</td>
+                    <td>@item.DataMedicao.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>@item.AggregatorId</td>
+                </tr>
+            }
+            <div class="container mt-5">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2>Dados do Servidor</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Table code here -->
+                    </div>
+                </div>
+            </div>
+        </tbody>
+    </table>
+</div>

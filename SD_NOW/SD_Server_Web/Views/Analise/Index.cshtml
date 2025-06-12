@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Pedir Análise";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="mb-0">Pedir Análise</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="tipo" class="form-label">Tipo:</label>
+                            <select id="tipo" name="tipo" class="form-select" required>
+                                <option value="temperatura">Temperatura</option>
+                                <option value="pressao">Pressão</option>
+                                <option value="ph">pH</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="operacao" class="form-label">Operação:</label>
+                            <select id="operacao" name="operacao" class="form-select" required>
+                                <option value="media">Média</option>
+                                <option value="contagem">Contagem</option>
+                                <option value="minimo">Mínimo</option>
+                                <option value="maximo">Máximo</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Pedir Análise</button>
+                        </div>
+                    </form>
+                </div>
+                @if (ViewBag.Resultado != null)
+                {
+                    <div class="card-footer bg-light">
+                        <h5 class="text-primary">Resultado:</h5>
+                        <pre class="bg-dark text-white p-3 rounded">@ViewBag.Resultado</pre>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <a class="btn btn-primary" href="https://app.powerbi.com/groups/me/reports/6ac38c53-8d2c-4b81-85d3-43c3b0277b58/c5317bbc83e42c995023?experience=power-bi">
+        Análise Detalhada (Power BI)</a>
+</div>
